@@ -9,10 +9,10 @@
 * Install the Nmap/ Zenmap from the internet.
 * Open the Zenmap tool in Windows and KaliLinux.
 * Enter the target website or IP address in Zenmap and scan it with the below profiles each time:
-* Intense Scan
-* Ping Scan
-* Slow Comprehensive Scan
-* Quick Scan
+` Intense Scan`
+` Ping Scan `
+` Slow Comprehensive Scan `
+` Quick Scan `
 * Compare the results between all scans and determine the differences.
 * Gather the information related to the port numbers, which are filtered and opened in public.
 * Find the services running on port numbers in the server or domain.
