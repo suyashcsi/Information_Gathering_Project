@@ -1,4 +1,4 @@
-# Network-Security_Project
+# Network-Security_Task
 ## Find the port numbers of the domain server that are open and filtered. Identify the target OS installed in the webserver and the services running with the help of the NMAP tool with different profiles (Slow Comprehensive Scan/Intense Scan) and find out the details from Shodan website (online resources).
 ### Target Website:
 * Facebook.com (Intensive Scan)
