@@ -1,0 +1,376 @@
+└─# nmap facebook.com     
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-18 00:35 IST
+Nmap scan report for facebook.com (163.70.140.35)
+Host is up (0.011s latency).
+Other addresses for facebook.com (not scanned): 2a03:2880:f18a:188:face:b00c:0:25de
+rDNS record for 163.70.140.35: edge-star-mini-shv-01-hyd1.facebook.com
+Not shown: 995 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+80/tcp   open  http
+443/tcp  open  https
+554/tcp  open  rtsp
+1723/tcp open  pptp
+
+Nmap done: 1 IP address (1 host up) scanned in 4.86 seconds
+                                                                             
+┌──(root㉿kali)-[/home/suyash]
+└─# nmap facebook.com -T4 -A -v
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-18 00:37 IST
+NSE: Loaded 156 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 00:37
+Completed NSE at 00:37, 0.00s elapsed
+Initiating NSE at 00:37
+Completed NSE at 00:37, 0.00s elapsed
+Initiating NSE at 00:37
+Completed NSE at 00:37, 0.00s elapsed
+Initiating Ping Scan at 00:37
+Scanning facebook.com (163.70.145.35) [4 ports]
+Completed Ping Scan at 00:37, 0.02s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 00:37
+Completed Parallel DNS resolution of 1 host. at 00:37, 0.02s elapsed
+Initiating SYN Stealth Scan at 00:37
+Scanning facebook.com (163.70.145.35) [1000 ports]
+Discovered open port 554/tcp on 163.70.145.35
+Discovered open port 443/tcp on 163.70.145.35
+Discovered open port 1723/tcp on 163.70.145.35
+Discovered open port 21/tcp on 163.70.145.35
+Discovered open port 80/tcp on 163.70.145.35
+Completed SYN Stealth Scan at 00:38, 67.41s elapsed (1000 total ports)
+Initiating Service scan at 00:38
+Scanning 5 services on facebook.com (163.70.145.35)
+Service scan Timing: About 60.00% done; ETC: 00:41 (0:01:21 remaining)
+Service scan Timing: About 80.00% done; ETC: 00:41 (0:00:39 remaining)
+Completed Service scan at 00:41, 158.75s elapsed (5 services on 1 host)
+Initiating OS detection (try #1) against facebook.com (163.70.145.35)
+Retrying OS detection (try #2) against facebook.com (163.70.145.35)
+Initiating Traceroute at 00:41
+Completed Traceroute at 00:41, 0.02s elapsed
+Initiating Parallel DNS resolution of 1 host. at 00:41
+Completed Parallel DNS resolution of 1 host. at 00:41, 0.11s elapsed
+NSE: Script scanning 163.70.145.35.
+Initiating NSE at 00:41
+Completed NSE at 00:41, 30.97s elapsed
+Initiating NSE at 00:41
+Completed NSE at 00:42, 32.31s elapsed
+Initiating NSE at 00:42
+Completed NSE at 00:42, 0.00s elapsed
+Nmap scan report for facebook.com (163.70.145.35)
+Host is up (0.0022s latency).
+Other addresses for facebook.com (not scanned): 2a03:2880:f18a:188:face:b00c:0:25de
+rDNS record for 163.70.145.35: edge-star-mini-shv-02-del2.facebook.com
+Not shown: 992 filtered tcp ports (no-response)
+PORT     STATE  SERVICE     VERSION
+21/tcp   open   ftp?
+80/tcp   open   http        proxygen-bolt
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Did not follow redirect to https://facebook.com/
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 301 Moved Permanently
+|     Location: https:///
+|     Content-Type: text/plain
+|     Server: proxygen-bolt
+|     Date: Wed, 17 Apr 2024 19:08:36 GMT
+|     Connection: close
+|     Content-Length: 0
+|   HTTPOptions: 
+|     HTTP/1.1 301 Moved Permanently
+|     Location: https:///
+|     Content-Type: text/plain
+|     Server: proxygen-bolt
+|     Date: Wed, 17 Apr 2024 19:08:37 GMT
+|     Connection: close
+|     Content-Length: 0
+|   RTSPRequest: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/html; charset=utf-8
+|     Date: Wed, 17 Apr 2024 19:08:37 GMT
+|     Connection: close
+|     Content-Length: 2959
+|     <!DOCTYPE html>
+|     <html lang="en" id="facebook">
+|     <head>
+|     <title>Facebook | Error</title>
+|     <meta charset="utf-8">
+|     <meta http-equiv="cache-control" content="no-cache">
+|     <meta http-equiv="cache-control" content="no-store">
+|     <meta http-equiv="cache-control" content="max-age=0">
+|     <meta http-equiv="expires" content="-1">
+|     <meta http-equiv="pragma" content="no-cache">
+|     <meta name="robots" content="noindex,nofollow">
+|     <style>
+|     html, body {
+|     color: #141823;
+|     background-color: #e9eaed;
+|     font-family: Helvetica, Lucida Grande, Arial,
+|     Tahoma, Verdana, sans-serif;
+|     margin: 0;
+|     padding: 0;
+|     text-align: center;
+|     #header {
+|_    height: 30px;
+|_http-server-header: proxygen-bolt
+443/tcp  open   ssl/https
+|_http-title: Did not follow redirect to https://www.facebook.com/
+|_ssl-date: TLS randomness does not represent time
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+| tls-alpn: 
+|   h2
+|_  http/1.1
+| ssl-cert: Subject: commonName=*.facebook.com/organizationName=Meta Platforms, Inc./stateOrProvinceName=California/countryName=US
+| Subject Alternative Name: DNS:*.facebook.com, DNS:*.facebook.net, DNS:*.fbcdn.net, DNS:*.fbsbx.com, DNS:*.m.facebook.com, DNS:*.messenger.com, DNS:*.xx.fbcdn.net, DNS:*.xy.fbcdn.net, DNS:*.xz.fbcdn.net, DNS:facebook.com, DNS:messenger.com
+| Issuer: commonName=DigiCert SHA2 High Assurance Server CA/organizationName=DigiCert Inc/countryName=US
+| Public Key type: ec
+| Public Key bits: 256
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2024-01-26T00:00:00
+| Not valid after:  2024-04-25T23:59:59
+| MD5:   e103:799b:8627:7a1e:bf22:7791:4fe5:7d94
+|_SHA-1: 8b2f:ea8c:da31:f258:fe76:7c4a:ab3c:1f0a:cd0f:efd1
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 400 Bad Request
+|     Vary: Accept-Encoding
+|     Content-Type: text/html; charset="utf-8"
+|     X-FB-Debug: v+U0f6T19tHfDLFKy0PNr6i2S7+rpIg0rT0x0WrPWxW/7albncQniAw44OzbgDkzZJ6y3e8646cHUA80CxxdOA==
+|     Date: Wed, 17 Apr 2024 19:08:43 GMT
+|     Proxy-Status: http_request_error; e_fb_configversion="AcKhC1Y0SP8VkGWTJD0WPxkefzd6FFfBfAERzghpbOyPNYRGTQAUf_Wqi7CWaA"; e_clientaddr="AcITavL-XVkpt1pW1CdnkZMIAhXBwzqm9R5jwmg0NUJUeYncOBZ-0Hp4x1k6q-fTsdrXDJPnR5sBGrUdwd8nvfY5O_TJYsKYPQNaXjrii0VWpA"; e_fb_vipport="AcKYpyH3IN9Mh6aeErHuGIqAnJ1EtKcvaap0zW7ck0rEbDj0dZrZK_OkK0Ja"; e_upip="AcK_gGso_lrm3yEvWe9nAiBPu_ER5Q175MVa7wEMXPhSItc0xnu03WwC511ym1d_R924W9Z6ZfG4CDq1LtQD5uFe0T_JEhegpIk"; e_fb_requestsequencenumber="AcL7h25XXg66TZ8kPn3FkHvB8elcwiplzBsn_YvKyY4BJawJKCvOY5HgRg"; e_fb_hostheader="AcIEqpUs2soIq88snUc6JpX5mE2gezM1-geV2SiYRoKmom8jVW0S9cTnGXIWImsCRPMGVFx1jA"; e_fb_vipaddr="AcIyHtEw_W9Gzpcc7YbClwrwyijyLXnwV9PflFzp
+|   HTTPOptions: 
+|     HTTP/1.1 500 Internal Server Error
+|     Vary: Accept-Encoding
+|     Pragma: no-cache
+|     Cache-Control: private, no-cache, no-store, must-revalidate
+|     Expires: Sat, 01 Jan 2000 00:00:00 GMT
+|     content-security-policy: default-src 'self' data: blob:;script-src 'unsafe-inline' 'unsafe-eval' blob: data: 'self' *.facebook.com *.fbcdn.net *.facebook.net 127.0.0.1:* https://*.google-analytics.com *.google.com;style-src data: blob: 'unsafe-inline';connect-src blob: 'self' *.facebook.com facebook.com *.fbcdn.net *.facebook.net wss://*.facebook.com:* wss://*.whatsapp.com:* wss://*.fbcdn.net attachment.fbsbx.com ws://localhost:* *.cdninstagram.com https://*.google-analytics.com;img-src 'self' data: blob: https://*.google-analytics.com;block-all-mixed-content;upgrade-insecure-requests;
+|     X-Frame-Options: DENY
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 0
+|_    reporting-endpoints: coop_report="https://www.faceb
+554/tcp  open   rtsp?
+843/tcp  closed unknown
+1723/tcp open   pptp?
+5222/tcp closed xmpp-client
+8443/tcp closed https-alt
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.94SVN%I=7%D=4/18%Time=66201E33%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,B3,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nLocation:\x20
+SF:https:///\r\nContent-Type:\x20text/plain\r\nServer:\x20proxygen-bolt\r\
+SF:nDate:\x20Wed,\x2017\x20Apr\x202024\x2019:08:36\x20GMT\r\nConnection:\x
+SF:20close\r\nContent-Length:\x200\r\n\r\n")%r(HTTPOptions,B3,"HTTP/1\.1\x
+SF:20301\x20Moved\x20Permanently\r\nLocation:\x20https:///\r\nContent-Type
+SF::\x20text/plain\r\nServer:\x20proxygen-bolt\r\nDate:\x20Wed,\x2017\x20A
+SF:pr\x202024\x2019:08:37\x20GMT\r\nConnection:\x20close\r\nContent-Length
+SF::\x200\r\n\r\n")%r(RTSPRequest,C21,"HTTP/1\.1\x20400\x20Bad\x20Request\
+SF:r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nDate:\x20Wed,\x2017\
+SF:x20Apr\x202024\x2019:08:37\x20GMT\r\nConnection:\x20close\r\nContent-Le
+SF:ngth:\x202959\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=\"en\"\x20id=\"f
+SF:acebook\">\n\x20\x20<head>\n\x20\x20\x20\x20<title>Facebook\x20\|\x20Er
+SF:ror</title>\n\x20\x20\x20\x20<meta\x20charset=\"utf-8\">\n\x20\x20\x20\
+SF:x20<meta\x20http-equiv=\"cache-control\"\x20content=\"no-cache\">\n\x20
+SF:\x20\x20\x20<meta\x20http-equiv=\"cache-control\"\x20content=\"no-store
+SF:\">\n\x20\x20\x20\x20<meta\x20http-equiv=\"cache-control\"\x20content=\
+SF:"max-age=0\">\n\x20\x20\x20\x20<meta\x20http-equiv=\"expires\"\x20conte
+SF:nt=\"-1\">\n\x20\x20\x20\x20<meta\x20http-equiv=\"pragma\"\x20content=\
+SF:"no-cache\">\n\x20\x20\x20\x20<meta\x20name=\"robots\"\x20content=\"noi
+SF:ndex,nofollow\">\n\x20\x20\x20\x20<style>\n\x20\x20\x20\x20\x20\x20html
+SF:,\x20body\x20{\n\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#141823;\n\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20background-color:\x20#e9eaed;\n\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20font-family:\x20Helvetica,\x20Lucida\x20Grande,\x2
+SF:0Arial,\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20Tahoma,\x20Verdana,\x20sans-serif;\n\x20\x20\x20\
+SF:x20\x20\x20\x20\x20margin:\x200;\n\x20\x20\x20\x20\x20\x20\x20\x20paddi
+SF:ng:\x200;\n\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\n\x20
+SF:\x20\x20\x20\x20\x20}\n\n\x20\x20\x20\x20\x20\x20#header\x20{\n\x20\x20
+SF:\x20\x20\x20\x20\x20\x20height:\x2030px;\n\x20\x20\x20\x20\x20\x20\x20\
+SF:x20");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.94SVN%T=SSL%I=7%D=4/18%Time=66201E3A%P=x86_64-pc-linux-
+SF:gnu%r(GetRequest,11A8,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nVary:\x20A
+SF:ccept-Encoding\r\nContent-Type:\x20text/html;\x20charset=\"utf-8\"\r\nX
+SF:-FB-Debug:\x20v\+U0f6T19tHfDLFKy0PNr6i2S7\+rpIg0rT0x0WrPWxW/7albncQniAw
+SF:44OzbgDkzZJ6y3e8646cHUA80CxxdOA==\r\nDate:\x20Wed,\x2017\x20Apr\x202024
+SF:\x2019:08:43\x20GMT\r\nProxy-Status:\x20http_request_error;\x20e_fb_con
+SF:figversion=\"AcKhC1Y0SP8VkGWTJD0WPxkefzd6FFfBfAERzghpbOyPNYRGTQAUf_Wqi7
+SF:CWaA\";\x20e_clientaddr=\"AcITavL-XVkpt1pW1CdnkZMIAhXBwzqm9R5jwmg0NUJUe
+SF:YncOBZ-0Hp4x1k6q-fTsdrXDJPnR5sBGrUdwd8nvfY5O_TJYsKYPQNaXjrii0VWpA\";\x2
+SF:0e_fb_vipport=\"AcKYpyH3IN9Mh6aeErHuGIqAnJ1EtKcvaap0zW7ck0rEbDj0dZrZK_O
+SF:kK0Ja\";\x20e_upip=\"AcK_gGso_lrm3yEvWe9nAiBPu_ER5Q175MVa7wEMXPhSItc0xn
+SF:u03WwC511ym1d_R924W9Z6ZfG4CDq1LtQD5uFe0T_JEhegpIk\";\x20e_fb_requestseq
+SF:uencenumber=\"AcL7h25XXg66TZ8kPn3FkHvB8elcwiplzBsn_YvKyY4BJawJKCvOY5HgR
+SF:g\";\x20e_fb_hostheader=\"AcIEqpUs2soIq88snUc6JpX5mE2gezM1-geV2SiYRoKmo
+SF:m8jVW0S9cTnGXIWImsCRPMGVFx1jA\";\x20e_fb_vipaddr=\"AcIyHtEw_W9Gzpcc7YbC
+SF:lwrwyijyLXnwV9PflFzp")%r(HTTPOptions,15FC,"HTTP/1\.1\x20500\x20Internal
+SF:\x20Server\x20Error\r\nVary:\x20Accept-Encoding\r\nPragma:\x20no-cache\
+SF:r\nCache-Control:\x20private,\x20no-cache,\x20no-store,\x20must-revalid
+SF:ate\r\nExpires:\x20Sat,\x2001\x20Jan\x202000\x2000:00:00\x20GMT\r\ncont
+SF:ent-security-policy:\x20default-src\x20'self'\x20data:\x20blob:;script-
+SF:src\x20'unsafe-inline'\x20'unsafe-eval'\x20blob:\x20data:\x20'self'\x20
+SF:\*\.facebook\.com\x20\*\.fbcdn\.net\x20\*\.facebook\.net\x20127\.0\.0\.
+SF:1:\*\x20https://\*\.google-analytics\.com\x20\*\.google\.com;style-src\
+SF:x20data:\x20blob:\x20'unsafe-inline';connect-src\x20blob:\x20'self'\x20
+SF:\*\.facebook\.com\x20facebook\.com\x20\*\.fbcdn\.net\x20\*\.facebook\.n
+SF:et\x20wss://\*\.facebook\.com:\*\x20wss://\*\.whatsapp\.com:\*\x20wss:/
+SF:/\*\.fbcdn\.net\x20attachment\.fbsbx\.com\x20ws://localhost:\*\x20\*\.c
+SF:dninstagram\.com\x20https://\*\.google-analytics\.com;img-src\x20'self'
+SF:\x20data:\x20blob:\x20https://\*\.google-analytics\.com;block-all-mixed
+SF:-content;upgrade-insecure-requests;\r\nX-Frame-Options:\x20DENY\r\nX-Co
+SF:ntent-Type-Options:\x20nosniff\r\nX-XSS-Protection:\x200\r\nreporting-e
+SF:ndpoints:\x20coop_report=\"https://www\.faceb");
+Device type: bridge|general purpose|switch
+Running (JUST GUESSING): Oracle Virtualbox (95%), QEMU (91%), Bay Networks embedded (86%)
+OS CPE: cpe:/o:oracle:virtualbox cpe:/a:qemu:qemu cpe:/h:baynetworks:baystack_450
+Aggressive OS guesses: Oracle Virtualbox (95%), QEMU user mode network gateway (91%), Bay Networks BayStack 450 switch (software version 3.1.0.22) (86%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=17 (Good luck!)
+IP ID Sequence Generation: Incremental
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   0.36 ms 10.0.2.2
+2   0.39 ms edge-star-mini-shv-02-del2.facebook.com (163.70.145.35)
+
+NSE: Script Post-scanning.
+Initiating NSE at 00:42
+Completed NSE at 00:42, 0.00s elapsed
+Initiating NSE at 00:42
+Completed NSE at 00:42, 0.00s elapsed
+Initiating NSE at 00:42
+Completed NSE at 00:42, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 301.65 seconds
+           Raw packets sent: 6056 (269.516KB) | Rcvd: 87 (4.780KB)
+                                                                             
+┌──(root㉿kali)-[/home/suyash]
+└─# nmap facebook.com -sn      
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-18 00:42 IST
+Nmap scan report for facebook.com (163.70.145.35)
+Host is up (0.0038s latency).
+Other addresses for facebook.com (not scanned): 2a03:2880:f18a:188:face:b00c:0:25de
+rDNS record for 163.70.145.35: edge-star-mini-shv-02-del2.facebook.com
+Nmap done: 1 IP address (1 host up) scanned in 0.11 seconds
+                                                                             
+┌──(root㉿kali)-[/home/suyash]
+└─# nmap facebook.com -sS -sU -T4 -A -v -PE -PP -PS80
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-18 00:43 IST
+NSE: Loaded 156 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 00:43
+Completed NSE at 00:43, 0.00s elapsed
+Initiating NSE at 00:43
+Completed NSE at 00:43, 0.00s elapsed
+Initiating NSE at 00:43
+Completed NSE at 00:43, 0.00s elapsed
+Initiating Ping Scan at 00:43
+Scanning facebook.com (163.70.145.35) [3 ports]
+Completed Ping Scan at 00:43, 0.03s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 00:43
+Completed Parallel DNS resolution of 1 host. at 00:43, 0.00s elapsed
+Initiating SYN Stealth Scan at 00:43
+Scanning facebook.com (163.70.145.35) [1000 ports]
+Discovered open port 80/tcp on 163.70.145.35
+Discovered open port 443/tcp on 163.70.145.35
+Discovered open port 21/tcp on 163.70.145.35
+Discovered open port 554/tcp on 163.70.145.35
+Discovered open port 1723/tcp on 163.70.145.35
+Completed SYN Stealth Scan at 00:43, 4.98s elapsed (1000 total ports)
+Initiating UDP Scan at 00:43
+Scanning facebook.com (163.70.145.35) [1000 ports]
+Increasing send delay for 163.70.145.35 from 0 to 50 due to 11 out of 11 dropped probes since last increase.
+Increasing send delay for 163.70.145.35 from 50 to 100 due to 11 out of 11 dropped probes since last increase.
+UDP Scan Timing: About 13.45% done; ETC: 00:47 (0:03:19 remaining)
+Increasing send delay for 163.70.145.35 from 100 to 200 due to 11 out of 11 dropped probes since last increase.
+UDP Scan Timing: About 24.45% done; ETC: 00:48 (0:03:36 remaining)
+Increasing send delay for 163.70.145.35 from 200 to 400 due to 11 out of 11 dropped probes since last increase.
+Discovered open port 443/udp on 163.70.145.35
+UDP Scan Timing: About 27.95% done; ETC: 00:49 (0:04:18 remaining)
+Increasing send delay for 163.70.145.35 from 400 to 800 due to 11 out of 12 dropped probes since last increase.
+UDP Scan Timing: About 30.65% done; ETC: 00:50 (0:04:54 remaining)
+UDP Scan Timing: About 32.35% done; ETC: 00:51 (0:05:35 remaining)
+UDP Scan Timing: About 34.00% done; ETC: 00:52 (0:06:09 remaining)
+Increasing send delay for 163.70.145.35 from 800 to 1000 due to 11 out of 11 dropped probes since last increase.
+UDP Scan Timing: About 35.65% done; ETC: 00:53 (0:06:37 remaining)
+UDP Scan Timing: About 37.15% done; ETC: 00:54 (0:07:08 remaining)
+UDP Scan Timing: About 39.15% done; ETC: 00:56 (0:07:43 remaining)
+UDP Scan Timing: About 42.25% done; ETC: 00:57 (0:08:22 remaining)
+UDP Scan Timing: About 65.05% done; ETC: 01:05 (0:07:47 remaining)
+UDP Scan Timing: About 71.95% done; ETC: 01:07 (0:06:38 remaining)
+UDP Scan Timing: About 78.05% done; ETC: 01:08 (0:05:25 remaining)
+UDP Scan Timing: About 83.75% done; ETC: 01:08 (0:04:09 remaining)
+UDP Scan Timing: About 89.20% done; ETC: 01:09 (0:02:50 remaining)
+UDP Scan Timing: About 94.40% done; ETC: 01:10 (0:01:30 remaining)
+Completed UDP Scan at 01:10, 1643.64s elapsed (1000 total ports)
+Initiating Service scan at 01:10
+Scanning 1004 services on facebook.com (163.70.145.35)
+Service scan Timing: About 0.40% done
+Service scan Timing: About 3.09% done; ETC: 02:35 (1:22:08 remaining)
+Service scan Timing: About 3.29% done; ETC: 02:49 (1:35:38 remaining)
+Service scan Timing: About 6.08% done; ETC: 02:20 (1:05:27 remaining)
+Service scan Timing: About 6.27% done; ETC: 02:28 (1:12:56 remaining)
+Service scan Timing: About 9.06% done; ETC: 02:15 (0:58:52 remaining)
+Service scan Timing: About 9.26% done; ETC: 02:21 (1:03:50 remaining)
+Service scan Timing: About 12.05% done; ETC: 02:13 (0:54:44 remaining)
+Service scan Timing: About 12.25% done; ETC: 02:17 (0:58:23 remaining)
+Service scan Timing: About 14.94% done; ETC: 02:08 (0:49:15 remaining)
+Service scan Timing: About 15.24% done; ETC: 02:15 (0:54:53 remaining)
+Service scan Timing: About 18.03% done; ETC: 02:10 (0:49:16 remaining)
+Service scan Timing: About 20.42% done; ETC: 02:08 (0:45:44 remaining)
+Service scan Timing: About 21.22% done; ETC: 02:12 (0:48:43 remaining)
+Service scan Timing: About 24.00% done; ETC: 02:09 (0:44:38 remaining)
+Service scan Timing: About 26.79% done; ETC: 02:07 (0:41:21 remaining)
+Service scan Timing: About 32.17% done; ETC: 02:07 (0:38:29 remaining)
+Service scan Timing: About 38.15% done; ETC: 02:07 (0:34:53 remaining)
+Service scan Timing: About 44.12% done; ETC: 02:06 (0:31:22 remaining)
+Service scan Timing: About 50.10% done; ETC: 02:06 (0:27:54 remaining)
+Service scan Timing: About 56.08% done; ETC: 02:06 (0:24:30 remaining)
+Service scan Timing: About 62.05% done; ETC: 02:06 (0:21:07 remaining)
+Service scan Timing: About 67.93% done; ETC: 02:06 (0:17:50 remaining)
+Service scan Timing: About 73.80% done; ETC: 02:06 (0:14:38 remaining)
+Stats: 1:11:32 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 77.89% done; ETC: 02:07 (0:12:30 remaining)
+Service scan Timing: About 82.77% done; ETC: 02:06 (0:09:39 remaining)
+Service scan Timing: About 88.25% done; ETC: 02:07 (0:06:38 remaining)
+Service scan Timing: About 93.53% done; ETC: 02:07 (0:03:41 remaining)
+Service scan Timing: About 98.61% done; ETC: 02:06 (0:00:47 remaining)
+Service scan Timing: About 98.90% done; ETC: 02:07 (0:00:37 remaining)
+Completed Service scan at 02:07, 3391.88s elapsed (1004 services on 1 host)
+Initiating OS detection (try #1) against facebook.com (163.70.145.35)
+Retrying OS detection (try #2) against facebook.com (163.70.145.35)
+Initiating Traceroute at 02:07
+Completed Traceroute at 02:07, 0.05s elapsed
+Initiating Parallel DNS resolution of 1 host. at 02:07
+Completed Parallel DNS resolution of 1 host. at 02:07, 0.02s elapsed
+NSE: Script scanning 163.70.145.35.
+Initiating NSE at 02:07
+NSE Timing: About 98.95% done; ETC: 02:55 (0:00:30 remaining)
+NSE Timing: About 98.96% done; ETC: 02:55 (0:00:30 remaining)
+NSE Timing: About 98.96% done; ETC: 02:56 (0:00:31 remaining)
+NSE Timing: About 98.96% done; ETC: 02:56 (0:00:31 remaining)
+NSE Timing: About 98.97% done; ETC: 02:57 (0:00:31 remaining)
+NSE Timing: About 98.97% done; ETC: 02:57 (0:00:31 remaining)
+NSE Timing: About 98.97% done; ETC: 02:58 (0:00:31 remaining)
+NSE Timing: About 98.98% done; ETC: 02:58 (0:00:32 remaining)
+Stats: 2:15:23 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE: Active NSE Script Threads: 1000 (1000 waiting)
+NSE Timing: About 98.98% done; ETC: 02:59 (0:00:32 remaining)
+Stats: 2:15:44 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE: Active NSE Script Threads: 1000 (999 waiting)
+NSE Timing: About 98.98% done; ETC: 02:59 (0:00:32 remaining)
+Stats: 2:16:07 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE: Active NSE Script Threads: 1000 (1000 waiting)
+NSE Timing: About 98.98% done; ETC: 02:59 (0:00:32 remaining)
+Stats: 2:16:08 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE: Active NSE Script Threads: 1000 (999 waiting)
+NSE Timing: About 98.98% done; ETC: 02:59 (0:00:32 remaining)
+Stats: 2:16:08 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE: Active NSE Script Threads: 1000 (998 waiting)
+NSE Timing: About 98.98% done; ETC: 02:59 (0:00:32 remaining)
+Stats: 2:16:09 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE: Active NSE Script Threads: 1000 (998 waiting)
+NSE Timing: About 98.98% done; ETC: 02:59 (0:00:32 remaining)

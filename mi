@@ -1,0 +1,236 @@
+└─# nmap MI.com           
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-18 00:35 IST
+Nmap scan report for MI.com (161.117.94.231)
+Host is up (0.018s latency).
+Other addresses for MI.com (not scanned): 161.117.97.92
+Not shown: 995 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+80/tcp   open  http
+443/tcp  open  https
+554/tcp  open  rtsp
+1723/tcp open  pptp
+
+Nmap done: 1 IP address (1 host up) scanned in 6.27 seconds
+                                                                             
+┌──(root㉿kali)-[/home/suyash]
+└─# nmap MI.com -T4 -A -v
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-18 00:37 IST
+NSE: Loaded 156 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 00:37
+Completed NSE at 00:37, 0.00s elapsed
+Initiating NSE at 00:37
+Completed NSE at 00:37, 0.00s elapsed
+Initiating NSE at 00:37
+Completed NSE at 00:37, 0.00s elapsed
+Initiating Ping Scan at 00:37
+Scanning MI.com (161.117.94.231) [4 ports]
+Completed Ping Scan at 00:37, 0.05s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 00:37
+Completed Parallel DNS resolution of 1 host. at 00:37, 0.06s elapsed
+Initiating SYN Stealth Scan at 00:37
+Scanning MI.com (161.117.94.231) [1000 ports]
+Discovered open port 21/tcp on 161.117.94.231
+Discovered open port 80/tcp on 161.117.94.231
+Discovered open port 1723/tcp on 161.117.94.231
+Discovered open port 554/tcp on 161.117.94.231
+Discovered open port 443/tcp on 161.117.94.231
+Completed SYN Stealth Scan at 00:37, 22.86s elapsed (1000 total ports)
+Initiating Service scan at 00:37
+Scanning 5 services on MI.com (161.117.94.231)
+Completed Service scan at 00:37, 5.02s elapsed (5 services on 1 host)
+Initiating OS detection (try #1) against MI.com (161.117.94.231)
+Retrying OS detection (try #2) against MI.com (161.117.94.231)
+Initiating Traceroute at 00:38
+Completed Traceroute at 00:38, 0.02s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 00:38
+Completed Parallel DNS resolution of 2 hosts. at 00:38, 0.01s elapsed
+NSE: Script scanning 161.117.94.231.
+Initiating NSE at 00:38
+Completed NSE at 00:38, 32.51s elapsed
+Initiating NSE at 00:38
+Completed NSE at 00:39, 32.57s elapsed
+Initiating NSE at 00:39
+Completed NSE at 00:39, 0.00s elapsed
+Nmap scan report for MI.com (161.117.94.231)
+Host is up (0.012s latency).
+Other addresses for MI.com (not scanned): 161.117.97.92
+Not shown: 995 filtered tcp ports (no-response)
+PORT     STATE SERVICE    VERSION
+21/tcp   open  tcpwrapped
+80/tcp   open  tcpwrapped
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Did not follow redirect to https://www.mi.com/
+443/tcp  open  tcpwrapped
+| tls-alpn: 
+|   h2
+|_  http/1.1
+|_ssl-date: TLS randomness does not represent time
+|_http-title: 400 The plain HTTP request was sent to HTTPS port
+| ssl-cert: Subject: commonName=mi.com
+| Subject Alternative Name: DNS:mi.com, DNS:www.mi.com
+| Issuer: commonName=RapidSSL TLS RSA CA G1/organizationName=DigiCert Inc/countryName=US
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-10-09T00:00:00
+| Not valid after:  2024-11-01T23:59:59
+| MD5:   62d0:5081:cfaa:2ef3:d8ae:e30f:f454:97d5
+|_SHA-1: 0473:fdbf:423d:afd2:93d2:a6f4:c872:cb42:cdf6:e0f7
+| tls-nextprotoneg: 
+|   h2
+|_  http/1.1
+554/tcp  open  tcpwrapped
+1723/tcp open  tcpwrapped
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: bridge|general purpose
+Running (JUST GUESSING): Oracle Virtualbox (96%), QEMU (90%)
+OS CPE: cpe:/o:oracle:virtualbox cpe:/a:qemu:qemu
+Aggressive OS guesses: Oracle Virtualbox (96%), QEMU user mode network gateway (90%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=17 (Good luck!)
+IP ID Sequence Generation: Incremental
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   1.85 ms 10.0.2.2
+2   0.13 ms 161.117.94.231
+
+NSE: Script Post-scanning.
+Initiating NSE at 00:39
+Completed NSE at 00:39, 0.00s elapsed
+Initiating NSE at 00:39
+Completed NSE at 00:39, 0.00s elapsed
+Initiating NSE at 00:39
+Completed NSE at 00:39, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 106.30 seconds
+           Raw packets sent: 2110 (97.412KB) | Rcvd: 78 (3.972KB)
+                                                                             
+┌──(root㉿kali)-[/home/suyash]
+└─# nmap MI.com -sn      
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-18 00:41 IST
+Nmap scan report for MI.com (161.117.94.231)
+Host is up (0.00099s latency).
+Other addresses for MI.com (not scanned): 161.117.97.92
+Nmap done: 1 IP address (1 host up) scanned in 0.19 seconds
+                                                                             
+┌──(root㉿kali)-[/home/suyash]
+└─# nmap MI.com -sS -sU -T4 -A -v -PE -PP -PS80
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-18 00:42 IST
+NSE: Loaded 156 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 00:42
+Completed NSE at 00:42, 0.00s elapsed
+Initiating NSE at 00:42
+Completed NSE at 00:42, 0.00s elapsed
+Initiating NSE at 00:42
+Completed NSE at 00:42, 0.00s elapsed
+Initiating Ping Scan at 00:42
+Scanning MI.com (161.117.97.92) [3 ports]
+Completed Ping Scan at 00:42, 0.10s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 00:42
+Completed Parallel DNS resolution of 1 host. at 00:42, 0.67s elapsed
+Initiating SYN Stealth Scan at 00:42
+Scanning MI.com (161.117.97.92) [1000 ports]
+Discovered open port 554/tcp on 161.117.97.92
+Discovered open port 1723/tcp on 161.117.97.92
+Discovered open port 21/tcp on 161.117.97.92
+Discovered open port 443/tcp on 161.117.97.92
+Discovered open port 80/tcp on 161.117.97.92
+Completed SYN Stealth Scan at 00:42, 7.53s elapsed (1000 total ports)
+Initiating UDP Scan at 00:42
+Scanning MI.com (161.117.97.92) [1000 ports]
+Increasing send delay for 161.117.97.92 from 0 to 50 due to 11 out of 11 dropped probes since last increase.
+UDP Scan Timing: About 9.15% done; ETC: 00:48 (0:05:08 remaining)
+Increasing send delay for 161.117.97.92 from 50 to 100 due to 11 out of 11 dropped probes since last increase.
+Increasing send delay for 161.117.97.92 from 100 to 200 due to 11 out of 11 dropped probes since last increase.
+Increasing send delay for 161.117.97.92 from 200 to 400 due to 11 out of 11 dropped probes since last increase.
+UDP Scan Timing: About 25.50% done; ETC: 00:49 (0:05:27 remaining)
+Increasing send delay for 161.117.97.92 from 400 to 800 due to 11 out of 11 dropped probes since last increase.
+UDP Scan Timing: About 28.65% done; ETC: 00:50 (0:05:54 remaining)
+UDP Scan Timing: About 30.30% done; ETC: 00:52 (0:06:36 remaining)
+UDP Scan Timing: About 32.00% done; ETC: 00:53 (0:07:09 remaining)
+Increasing send delay for 161.117.97.92 from 800 to 1000 due to 11 out of 11 dropped probes since last increase.
+UDP Scan Timing: About 33.95% done; ETC: 00:54 (0:07:43 remaining)
+UDP Scan Timing: About 35.85% done; ETC: 00:55 (0:08:21 remaining)
+UDP Scan Timing: About 38.40% done; ETC: 00:57 (0:09:01 remaining)
+UDP Scan Timing: About 43.70% done; ETC: 00:59 (0:09:45 remaining)
+UDP Scan Timing: About 61.25% done; ETC: 01:05 (0:08:53 remaining)
+UDP Scan Timing: About 68.30% done; ETC: 01:07 (0:07:44 remaining)
+UDP Scan Timing: About 74.40% done; ETC: 01:08 (0:06:30 remaining)
+UDP Scan Timing: About 80.10% done; ETC: 01:08 (0:05:13 remaining)
+UDP Scan Timing: About 85.50% done; ETC: 01:09 (0:03:54 remaining)
+UDP Scan Timing: About 90.70% done; ETC: 01:10 (0:02:33 remaining)
+UDP Scan Timing: About 95.80% done; ETC: 01:10 (0:01:10 remaining)
+Completed UDP Scan at 01:11, 1702.07s elapsed (1000 total ports)
+Initiating Service scan at 01:11
+Scanning 1005 services on MI.com (161.117.97.92)
+Service scan Timing: About 0.40% done
+Service scan Timing: About 3.08% done; ETC: 02:35 (1:21:41 remaining)
+Service scan Timing: About 3.28% done; ETC: 02:50 (1:35:44 remaining)
+Service scan Timing: About 6.07% done; ETC: 02:20 (1:05:31 remaining)
+Service scan Timing: About 6.27% done; ETC: 02:28 (1:13:01 remaining)
+Service scan Timing: About 9.05% done; ETC: 02:15 (0:58:45 remaining)
+Service scan Timing: About 9.25% done; ETC: 02:21 (1:03:45 remaining)
+Service scan Timing: About 12.04% done; ETC: 02:13 (0:54:40 remaining)
+Service scan Timing: About 12.24% done; ETC: 02:17 (0:58:19 remaining)
+Service scan Timing: About 14.93% done; ETC: 02:08 (0:49:13 remaining)
+Service scan Timing: About 15.22% done; ETC: 02:15 (0:54:51 remaining)
+Service scan Timing: About 18.01% done; ETC: 02:11 (0:49:19 remaining)
+Service scan Timing: About 20.40% done; ETC: 02:08 (0:45:47 remaining)
+Service scan Timing: About 21.19% done; ETC: 02:12 (0:48:43 remaining)
+Service scan Timing: About 23.98% done; ETC: 02:09 (0:44:39 remaining)
+Service scan Timing: About 26.67% done; ETC: 02:07 (0:41:34 remaining)
+Service scan Timing: About 32.14% done; ETC: 02:07 (0:38:30 remaining)
+Service scan Timing: About 38.11% done; ETC: 02:07 (0:34:55 remaining)
+Service scan Timing: About 44.08% done; ETC: 02:07 (0:31:24 remaining)
+Service scan Timing: About 50.05% done; ETC: 02:06 (0:27:57 remaining)
+Service scan Timing: About 56.02% done; ETC: 02:06 (0:24:33 remaining)
+Service scan Timing: About 61.99% done; ETC: 02:06 (0:21:10 remaining)
+Service scan Timing: About 67.86% done; ETC: 02:06 (0:17:53 remaining)
+Service scan Timing: About 73.73% done; ETC: 02:06 (0:14:41 remaining)
+Stats: 1:10:41 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 74.83% done; ETC: 02:07 (0:14:11 remaining)
+Stats: 1:10:44 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 74.83% done; ETC: 02:07 (0:14:12 remaining)
+Stats: 1:10:46 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 74.83% done; ETC: 02:07 (0:14:13 remaining)
+Stats: 1:10:46 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 74.83% done; ETC: 02:07 (0:14:13 remaining)
+Service scan Timing: About 79.70% done; ETC: 02:07 (0:11:22 remaining)
+Service scan Timing: About 85.17% done; ETC: 02:07 (0:08:22 remaining)
+Service scan Timing: About 90.45% done; ETC: 02:07 (0:05:25 remaining)
+Service scan Timing: About 95.52% done; ETC: 02:07 (0:02:31 remaining)
+Service scan Timing: About 98.81% done; ETC: 02:07 (0:00:41 remaining)
+Completed Service scan at 02:07, 3391.82s elapsed (1005 services on 1 host)
+Initiating OS detection (try #1) against MI.com (161.117.97.92)
+Retrying OS detection (try #2) against MI.com (161.117.97.92)
+Initiating Traceroute at 02:07
+Completed Traceroute at 02:07, 0.09s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 02:07
+Completed Parallel DNS resolution of 2 hosts. at 02:07, 0.52s elapsed
+NSE: Script scanning 161.117.97.92.
+Initiating NSE at 02:07
+NSE Timing: About 98.97% done; ETC: 02:56 (0:00:30 remaining)
+NSE Timing: About 98.98% done; ETC: 02:56 (0:00:30 remaining)
+NSE Timing: About 98.98% done; ETC: 02:57 (0:00:30 remaining)
+NSE Timing: About 98.98% done; ETC: 02:57 (0:00:31 remaining)
+NSE Timing: About 98.98% done; ETC: 02:58 (0:00:31 remaining)
+NSE Timing: About 98.99% done; ETC: 02:58 (0:00:31 remaining)
+Stats: 2:16:18 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE: Active NSE Script Threads: 1000 (1000 waiting)
+NSE Timing: About 98.99% done; ETC: 02:59 (0:00:31 remaining)
+NSE Timing: About 98.99% done; ETC: 02:59 (0:00:32 remaining)
+Stats: 2:17:00 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE: Active NSE Script Threads: 1000 (998 waiting)
+NSE Timing: About 98.99% done; ETC: 03:00 (0:00:32 remaining)
+Stats: 2:17:01 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE: Active NSE Script Threads: 1000 (998 waiting)
+NSE Timing: About 98.99% done; ETC: 03:00 (0:00:32 remaining)
+
+                                                                      
