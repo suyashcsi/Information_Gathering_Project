@@ -16,11 +16,10 @@
 * Compare the results between all scans and determine the differences.
 * Gather the information related to the port numbers, which are filtered and opened in public.
 * Find the services running on port numbers in the server or domain.
-* Find the architecture of the server that is being used and tracert to reach from source to
-destination.
-▪ Collect the host details about IPV4 and IPV6 (if available) in Zenmap.
-▪ Collect the hostnames which are in public and the uptime of the servers.
-▪ Create a report document with appropriate screenshots consisting of all the details.
-▪ Open the browser and go to the Shodan website to gather information about the technologies
+* Find the architecture of the server that is being used and tracert to reach from source to destination.
+* Collect the host details about IPV4 and IPV6 (if available) in Zenmap.
+* Collect the hostnames which are in public and the uptime of the servers.
+* Create a report document with appropriate screenshots consisting of all the details.
+* Open the browser and go to the Shodan website to gather information about the technologies
 used on the web.
-▪ Gather information about the SSL certificate and download the certificate.
+* Gather information about the SSL certificate and download the certificate.
